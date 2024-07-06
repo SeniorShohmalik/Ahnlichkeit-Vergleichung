@@ -1,0 +1,46 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App | Project</title>
+</head>
+<body>
+
+    {%for nomzod in nomzodlar%}
+
+            <div>
+                <a href="{%url 'check' nomzod.id%}">{{nomzod.nomzod}}</a>
+            </div>
+
+
+    {%endfor%}
+
+
+    <style>
+
+        body{
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+
+        a{
+            text-decoration: none;
+            color: #75A1A1;
+        }
+
+
+
+    </style>
+    
+</body>
+</html>
+

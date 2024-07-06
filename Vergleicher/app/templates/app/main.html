@@ -1,0 +1,54 @@
+{%load static%}
+{% load books %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Copy</title>
+</head>
+<body>
+
+    {% if nomzod_ishi %}
+        <h1>{{nomzod.nomzod}} ishi :</h1>
+
+        {{ nomzod_ishi|highlight:proper }}
+
+    
+
+    {% endif %}
+
+    <p class="error">Sariq bilan ustiga chizilgan gaplar boshqa matnlarda uchraydi</p>
+    {%for j,k in result.items%}
+        <h3>{{j}} bilan o'xshashligi : {{k}} %</h3>
+    {%endfor%}
+
+
+    {% for r,j in results.items %}
+        <p>{{r}}{{j}}</p>
+    {% endfor %}
+
+
+
+
+
+
+
+    <style>
+
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+        }
+
+    .error{
+        color:gray;
+
+    }
+    </style>
+    
+</body>
+</html>
